@@ -36,6 +36,9 @@
 		<property name="url" value="${Globals.Url}" />
 		<property name="username" value="${Globals.UserName}" />
 		<property name="password" value="${Globals.Password}" />
+		
+		    <property name="validationQuery" value="SELECT 1" />
+    <property name="testOnBorrow" value="true" />
 	</bean>
     
     <!-- oracle (POM에서 commons-dbcp, ojdbc(라이센스 사항으로 별도로 배포되지 않음) 관련 라이브러리 설정)

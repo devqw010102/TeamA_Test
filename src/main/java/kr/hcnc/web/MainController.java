@@ -21,14 +21,13 @@ public class MainController {
 	public String mainPage() {
 		
 		System.out.println("MainController :: /main.do");
-//		HashMap<String, Object> list = dormitoriesService.selectTest();
 		
-//		List<Map<String, Object>> list = dormitoriesService.selectTest();
-//		
-//		for(Map<String, Object> map : list) {
-//			System.out.println(map);
-//		}
-//		
+		List<Map<String, Object>> list = dormitoriesService.selectTest();
+		
+		for(Map<String, Object> map : list) {
+			System.out.println(map);
+		}
+		
 		System.out.println("Exit For state");
 		
 		return "main/main";
