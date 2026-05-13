@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>메인페이지</title>
 </head>
 <body>
-
+	<h1>WEB-INF/JSP/KR/MAIN/main.jsp</h1>
 </body>
 </html>
