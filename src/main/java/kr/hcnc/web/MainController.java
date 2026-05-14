@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import kr.hcnc.service.DormitoriesService;
+import kr.hcnc.service.FacilityService;
 
 @Controller
 public class MainController {
@@ -31,10 +32,17 @@ public class MainController {
 		return "facility/facilityPage";
 	}
 	
+	@Resource(name = "facilityService")
+	private FacilityService facilityService;
+	
 	// 버튼 2 (구내식당 및 위치 정보)
 	@RequestMapping(value = "/facility/cafeteria.do")
 	public String cafeteriaPage() {
 		System.out.println("MainController :: /facility/cafeteria.do");
+		
+		List<Map<String, Object>> list = facilityService.selectCafeteriaList();
+		System.out.println("결과 : " + list);
+		
 		return "facility/cafeteriaPage";
 	}
 	
