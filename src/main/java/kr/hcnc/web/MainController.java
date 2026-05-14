@@ -22,15 +22,26 @@ public class MainController {
 		
 		System.out.println("MainController :: /main.do");
 		
-		List<Map<String, Object>> list = dormitoriesService.selectTest();
-		
-		for(Map<String, Object> map : list) {
-			System.out.println(map);
-		}
-		
-		System.out.println("Exit For state");
+//		List<Map<String, Object>> list = dormitoriesService.selectTest();
+//		
+//		for(Map<String, Object> map : list) {
+//			System.out.println(map);
+//		}
+//		
+//		System.out.println("Exit For state");
 		
 		return "main/main";
 	}
 	
+	@RequestMapping(value = "/badge.do")
+	public String badgePage() {
+		System.out.println("MainController :: /badge.do");
+		return "badge/badgePage";
+	}
+	
+	@RequestMapping(value = "/facility.do")
+	public String facilityPage() {
+		System.out.println("MainController :: /facility.do");
+		return "facility/facilityPage";
+	}
 }
