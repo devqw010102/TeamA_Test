@@ -4,21 +4,21 @@
 	
 	<!-- 구내식당 목록 조회 -->
 	<select id = "selectCafeteriaList" resultType = "Map">
-		SELECT1
+		SELECT 1
 	</select>
 	
 	<!-- 흡연장  조회 -->
 	<select id = "selectSmokingAreaList" resultType = "Map">
-		SELECT1
+		SELECT 1
 	</select>
 	
 	<!-- 강의실  조회 -->
 	<select id = "selectClassroomList" resultType = "Map">
-		SELECT1
+		SELECT 1
 	</select>
 	
 	<!-- 교통 정보 목록 조회 -->
 	<select id = "selectTarnsportList" resultType = "Map">
-		SELECT1
+		SELECT 1
 	</select>
 </mapper>

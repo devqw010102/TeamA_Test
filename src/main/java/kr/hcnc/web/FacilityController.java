@@ -25,27 +25,27 @@ public class FacilityController {
 		System.out.println("FacilityController :: /facility/cafeteria.do");
 		List<Map<String, Object>> list = facilityService.selectCafeteriaList();
 		System.out.println("결과 : " + list);
-		return "facility/cafeteriaPage";
+		return "facility/cafeteria/cafeteriaPage";
 	}
 	
 	// 흡연장소
 	@RequestMapping(value = "/facility/smoking.do")
 	public String smokingPage() {
 		System.out.println("FacilityController :: /facility/smoking.do");
-		return "facility/smokingPage";
+		return "facility/smoking/smokingPage";
 	}
 	
 	// 강의실 안내
 	@RequestMapping(value = "/facility/classroom.do")
 	public String classroomPage() {
 		System.out.println("FacilityController :: /facility/classroom.do");
-		return "facility/classroomPage";
+		return "facility/classroom/classroomPage";
 	}
 	
 	// 교통정보
 	@RequestMapping(value = "/facility/transport.do")
 	public String transportPage() {
 		System.out.println("FacilityController :: /facility/transport.do");
-		return "facility/transportPage";
+		return "facility/transport/transportPage";
 	}
 }
