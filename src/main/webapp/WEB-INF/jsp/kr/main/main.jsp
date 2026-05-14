@@ -5,8 +5,31 @@
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
+<script src = "https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
-<body>
-	<h1>WEB-INF/JSP/KR/MAIN/main.jsp</h1>
+<body>	
+	<%@ include file = "/WEB-INF/jsp/kr/common/header.jsp" %>
+	
+	<div id = "button-area">
+		<button type = "button" onclick="loadPage('/badge.do')" >
+			명찰 발급 및 개인 맞춤 안내
+		</button>
+		
+		<button type = "button" onclick="loadPage('/facility.do')" >
+			보편적 시설 및 정보 안내
+		</button>
+	</div>
+	
+	<div id = "content-area">
+	</div>
+
+
+	<%@ include file = "/WEB-INF/jsp/kr/common/footer.jsp" %>
+	
+	<script>
+		function loadPage(url) {
+			$('#content-area').load(url);
+		}
+	</script>
 </body>
 </html>
