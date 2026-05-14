@@ -18,4 +18,10 @@ public class MainController {
 		System.out.println("MainController :: /main.do");
 		return "main/main";
 	}
+	
+	@RequestMapping(value = "/badge.do")
+	public String badgePage() {
+		System.out.println("MainController :: /badge.do");
+		return "badge/badgePage";
+	}
 }
