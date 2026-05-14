@@ -49,8 +49,8 @@ public class MainController {
 	@RequestMapping(value = "/facility/classroom.do")
 	public String classroomPage() {
 		System.out.println("MainController :: /facility/classroom.do");
-		return "facilty/classroomPage";
-	}
+		return "facility/classroomPage";
+	}	
 	
 	// 버튼 2 (교통 정보)
 	@RequestMapping(value = "facility/transport.do")
