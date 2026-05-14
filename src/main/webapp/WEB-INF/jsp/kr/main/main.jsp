@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>메인페이지</title>
 <script src = "resources/js/jquery-4.0.0.min.js"></script>
+<script src = "resources/js/bootstrap.min.js"></script>
+<link rel = "stylesheet" href = "resources/css/bootstrap.min.css">
 </head>
 <body>	
 	<%@ include file = "/WEB-INF/jsp/kr/common/header.jsp" %>
