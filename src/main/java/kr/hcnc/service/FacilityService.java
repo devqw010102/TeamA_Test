@@ -8,35 +8,40 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
-import kr.hcnc.mapper.FacilityMapper;
+import kr.hcnc.util.ApiClient;
 
 @Service("facilityService")
 public class FacilityService extends EgovAbstractServiceImpl{
 	
-	@Resource(name = "facilityMapper")
-	private FacilityMapper facilityMapper;
+	@Resource(name = "apiClient")
+	private ApiClient apiClient;
+
 	
 	// 구내식당
 	public List<Map<String, Object>> selectCafeteriaList() {
 		System.out.println("FacilityService :: selectCafeteriaList");
-		return facilityMapper.selectCafeteriaList();
+
+		return apiClient.get(
+				"/api/info/cafe",
+				List.class
+				);
 	}
 	
-	// 흡연장소
-	public List<Map<String, Object>> selectSmokingAreaList() {
-		System.out.println("FacilityService :: selectSmokingAreaList");
-		return facilityMapper.selectSmokingAreaList();
-	}
-	
-	// 강의실
-	public List<Map<String, Object>> selectClassroomList() {
-		System.out.println("FacilityService :: selectClassroomList");
-		return facilityMapper.selectClassroomList();
-	}
-	
-	// 교통 정보
-	public List<Map<String, Object>> selectTransportList() {
-		System.out.println("FacilityService :: selectTransportList");
-		return facilityMapper.selectTransportList();
-	}
+//	// 흡연장소
+//	public List<Map<String, Object>> selectSmokingAreaList() {
+//		System.out.println("FacilityService :: selectSmokingAreaList");
+//		return facilityMapper.selectSmokingAreaList();
+//	}
+//	
+//	// 강의실
+//	public List<Map<String, Object>> selectClassroomList() {
+//		System.out.println("FacilityService :: selectClassroomList");
+//		return facilityMapper.selectClassroomList();
+//	}
+//	
+//	// 교통 정보
+//	public List<Map<String, Object>> selectTransportList() {
+//		System.out.println("FacilityService :: selectTransportList");
+//		return facilityMapper.selectTransportList();
+//	}
 }
