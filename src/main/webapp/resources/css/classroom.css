@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+#classroom-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+#classroom-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003399;
+    margin-bottom: 30px;
+}
+
+#floor-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.floor-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #444;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.floor-btn:hover {
+    background-color: #003399;
+}
+
+.floor-btn.active {
+    background-color: #003399;
+}
+
+#floor-map {
+    text-align: center;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 10px;
+}
+
+#floor-img {
+    width: 100%;
+    max-width: 860px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#no-image {
+    padding: 60px 0;
+    font-size: 1.2rem;
+    color: #666;
+}
