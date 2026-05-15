@@ -61,9 +61,56 @@ $(document).on('click', '.student-row', function() {
 });
 
 function confirmStudent() {
+    // console.log('SELECTED :: ' + selected.STUDENT_NAME);
+    // alert(selected.STUDENT_ID + "선택됨")
+
     var selected = $('.student-row.table-primary').data('student');
-    console.log('SELECTED :: ' + selected.STUDENT_NAME);
-    alert(selected.STUDENT_NAME + "선택됨")
+    var studentId = selected.STUDENT_ID;
+
+    $.ajax({
+        url: '/updateStudent.do',
+        type: 'POST',
+        data: {param: studentId},
+        success: function(data) {
+            if(data.status == 'success') {
+                $.ajax({
+                    url: '/studentDetail.do',
+                    data: { param: studentId },
+                    success: function(data) {
+                        // content-area에 guidePage 로드 후 데이터 표시
+                        $('#content-area').load('/guide.do', function() {
+                            $('#card-name').text(data.STUDENT_NAME);
+                            $('#card-edu-name').text(data.EDU_NAME);
+                            $('#card-room').text(data.EDU_ROOM_NAME + '호');
+                            $('#card-floor').text(data.EDU_ROOM_NAME.charAt(0) + '층');
+                            $('#card-period').text(data.START_DATE + ' ~ ' + data.END_DATE);
+                            
+                            var dormId = data.DORMITORY_ID;
+                            if(dormId == null || dormId == 'X') {
+                                $('#card-dorm').text('생활관 미배정');
+                            } else {
+                                var dong = dormId.charAt(5);
+                                var ho = dormId.substr(6);
+                                $('#card-dorm').text(dong + '동 ' + ho + '호');
+                            }
+                        });
+                    },
+                    error: function() {
+                        alert('오류가 발생했습니다.');
+                    }
+                });
+            }
+            else {
+                alert('처리 중 오류가 발생하였습니다.');
+            }
+        },
+        error: function() {
+            alert('오류가 발생했습니다.');
+        }
+    });
+
+
+
 }
 
 function cancelSelect() {
