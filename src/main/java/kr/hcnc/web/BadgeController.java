@@ -40,4 +40,13 @@ public class BadgeController {
 		System.out.println("MainController :: /guide.do");
 		return "guide/guidePage";
 	}
+	
+	@RequestMapping(value = "/updateStudent.do")
+	@ResponseBody
+	public Map<String, Object> updateStudentStatus(String param) {
+		System.out.println("BadgeController :: /updateStudentStatus.do");
+		Map<String, Object> map = badgeService.updateStudentStatus(param);
+		System.out.println("/updateStudentStatus.do :: map = " + map);
+		return map;
+	}
 }

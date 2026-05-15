@@ -34,4 +34,13 @@ public class BadgeService extends EgovAbstractServiceImpl {
 				Map.class
 				);
 	}
+	
+	public Map updateStudentStatus(String param) {
+		System.out.println("BadgeService :: updateStudentStatus()");
+		
+		return apiClient.post(
+				"/api/student/update?param=" + param,
+				Map.class
+				);
+	}
 }
