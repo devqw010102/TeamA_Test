@@ -1,17 +1,6 @@
-function searchByBirth() {
-	var birth = $('#birth').val();
-	
-	if(birth == '') {
-		alert("생년월일을 입력해주세요");
-		return;
-	}
-    if(birth.length != 6) {
-        alert("생년월일 6자리를 입력해주세요.");
-        return;
-    }
+var inputValue = '';
 
-	// console.log(birth);
-	
+function searchByBirth(birth) {
 	$.ajax({
 		url: '/searchStudent.do',
 		data: {param : birth},
@@ -20,6 +9,9 @@ function searchByBirth() {
             $('#selected-area').hide();
             $('#confirm-btn').hide();
             $('#cancel-btn').hide();
+
+            inputValue = '';
+            $('#keypad-display').text('');
 
 			if(data.length == 0) {
 				$('#result-table').hide()
@@ -44,7 +36,7 @@ function searchByBirth() {
 		error: function() {
 			alert("오류 발생");
 		}
-	})
+	});
 }
 
 $(document).on('click', '.student-row', function() {
@@ -108,9 +100,6 @@ function confirmStudent() {
             alert('오류가 발생했습니다.');
         }
     });
-
-
-
 }
 
 function cancelSelect() {
@@ -118,4 +107,35 @@ function cancelSelect() {
     $('#selected-area').hide();
     $('#confirm-btn').hide();
     $('#cancel-btn').hide();
+}
+
+// #####################################
+// ########## 키패드 인터페이스 ###########
+// #####################################
+
+
+function pressKey(num) {
+    if(inputValue.length >= 6) return;
+
+    inputValue += num;
+    $('#keypad-display').text(inputValue);
+}
+
+function deleteKey() {
+    inputValue = inputValue.slice(0, -1);
+    $('#keypad-display').text(inputValue);
+}
+
+function clearKey() {
+    inputValue = '';
+    $('#keypad-display').text('');
+}
+
+function confirmKey() {
+    if(inputValue.length != 6) {
+        alert('생년월일 6자리를 입력해주세요.');
+        return;
+    }
+
+    searchByBirth(inputValue);
 }

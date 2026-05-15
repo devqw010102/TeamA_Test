@@ -1,35 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<style>
-    #guide-container {
-        max-width: 900px;
-        margin: 30px auto;
-        padding: 20px;
-    }
-    #guide-title {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
-        color: #003399;
-        margin-bottom: 30px;
-    }
-    .info-label {
-        color: #666;
-        font-size: 1rem;
-    }
-    .info-value {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #003399;
-    }
-    #back-btn {
-        width: 100%;
-        font-size: 1.5rem;
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-    }
-</style>
+<link rel="stylesheet" href="/resources/guide/guide.css">
 
 <div id="guide-container">
 
@@ -95,8 +66,4 @@
 
 </div>
 
-<script>
-	function goMain() {
-		$('#content-area').empty();
-	}
-</script>
+<script src="/resources/guide/guide.js"></script>
