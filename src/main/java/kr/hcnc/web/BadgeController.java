@@ -17,15 +17,6 @@ public class BadgeController {
 	@Resource(name = "badgeService")
 	private BadgeService badgeService;
 	
-	@RequestMapping(value = "/count.do")
-	@ResponseBody
-	public String selectCount() {
-		System.out.println("BadgeController :: /count.do");
-		String result = badgeService.selectCount();
-		System.out.println("BadgeController :: result = " + result);
-		return result;
-	}
-	
 	@RequestMapping(value = "/searchStudent.do")
 	@ResponseBody
 	public List<Map<String, Object>> selectStudent(String param) {
