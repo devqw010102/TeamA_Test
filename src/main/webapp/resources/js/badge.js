@@ -62,8 +62,37 @@ $(document).on('click', '.student-row', function() {
 
 function confirmStudent() {
     var selected = $('.student-row.table-primary').data('student');
-    console.log('SELECTED :: ' + selected.STUDENT_NAME);
-    alert(selected.STUDENT_NAME + "선택됨")
+    // console.log('SELECTED :: ' + selected.STUDENT_NAME);
+    // alert(selected.STUDENT_ID + "선택됨")
+
+    var studentId = selected.STUDENT_ID;
+
+    $.ajax({
+        url: '/studentDetail.do',
+        data: { param: studentId },
+        success: function(data) {
+            // content-area에 guidePage 로드 후 데이터 표시
+            $('#content-area').load('/guide.do', function() {
+                $('#card-name').text(data.STUDENT_NAME);
+                $('#card-edu-name').text(data.EDU_NAME);
+                $('#card-room').text(data.EDU_ROOM_NAME + '호');
+                $('#card-period').text(data.START_DATE + ' ~ ' + data.END_DATE);
+                
+                var dormId = data.DORMITORY_ID;
+                if(dormId == null || dormId == 'X') {
+                    $('#card-dorm').text('생활관 미배정');
+                } else {
+                    var dong = dormId.charAt(5);
+                    var ho = dormId.substr(6);
+                    $('#card-dorm').text(dong + '동 ' + ho + '호');
+                }
+            });
+        },
+        error: function() {
+            alert('오류가 발생했습니다.');
+        }
+    });
+
 }
 
 function cancelSelect() {

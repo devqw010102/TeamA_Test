@@ -25,4 +25,19 @@ public class BadgeController {
 		System.out.println("BadgeController :: list = " + list);
 		return list;
 	}
+	
+	@RequestMapping(value = "/studentDetail.do")
+	@ResponseBody
+	public Map<String, Object> selectStudentDetail(String param) {
+		System.out.println("BadgeController :: /studentDetail.do");
+		Map<String, Object> map = badgeService.selectStudentDetail(param);
+		System.out.println("/studentDetail.do :: map = " + map);
+		return map;
+	}
+	
+	@RequestMapping(value = "/guide.do")
+	public String guidePage() {
+		System.out.println("MainController :: /guide.do");
+		return "guide/guidePage";
+	}
 }
