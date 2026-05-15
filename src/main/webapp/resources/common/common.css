@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/* 전체 레이아웃 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 헤더 */
+#header {
+    height: 15%;
+    background: #003399;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
+
+/* 버튼 영역 */
+#button-area {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background: #f5f5f5;
+}
+
+#button-area button {
+    width: 250px;
+    height: 80px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: #003399;
+    color: white;
+}
+
+#button-area button:hover {
+    background: #0044cc;
+}
+
+/* 컨텐츠 영역 */
+#content-area {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    overflow-y: auto;
+}
+
+/* 푸터 */
+#footer {
+    height: 10%;
+    background: #003399;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* 처음 화면 오버레이 */
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #003399;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+#intro-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 60px;
+}
+
+#intro-buttons {
+    display: flex;
+    gap: 50px;
+}
+
+.intro-btn {
+    width: 300px;
+    height: 300px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 3px solid white;
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 2;
+}
+
+.intro-btn:hover {
+    background: white;
+    color: #003399;
+    transform: scale(1.05);
+}
+
+/* header, button-area, footer 기본 숨김 */
+#header {
+    display: none;
+}
+#footer {
+    display: none;
+}
