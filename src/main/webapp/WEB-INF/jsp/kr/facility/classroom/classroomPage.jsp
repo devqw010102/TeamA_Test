@@ -8,10 +8,17 @@
         🏫 강의실 안내
     </div>
 
-    <div id="classroom-content">
-        <!-- 추후 도면도 추가 예정 -->
-        <div id="floor-map">
-            준비 중입니다.
+    <div id="floor-tabs">
+        <button type="button" class="floor-btn active" onclick="changeFloor(1, this)">1F</button>
+        <button type="button" class="floor-btn" onclick="changeFloor(2, this)">2F</button>
+        <button type="button" class="floor-btn" onclick="changeFloor(3, this)">3F</button>
+        <button type="button" class="floor-btn" onclick="changeFloor(4, this)">4F</button>
+    </div>
+
+    <div id="floor-map">
+        <img id="floor-img" src="/images/floor_1f.png" alt="1층 강의실 배치도">
+        <div id="no-image" style="display:none;">
+            <p>해당 층 도면은 준비 중입니다.</p>
         </div>
     </div>
 
